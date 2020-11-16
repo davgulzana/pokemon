@@ -19,8 +19,11 @@ $(document).ready(function(){
     function render(data){
         $('.pokemon-list').html('')
         data.forEach(item => {
+            let pokemonName = item.name
+            pokemonName = s = pokemonName[0].toUpperCase() + pokemonName.substr(1).toLowerCase()
+            s = s[0].toUpperCase () + s.substr (1).toLowerCase ();
             let id = item.url.split('/')
-            $('.pokemon-list').append(`<li class="pokemon-detail" id=${id[id.length-2]}>${item.name}</li>`)
+            $('.pokemon-list').append(`<li class="pokemon-detail" id=${id[id.length-2]}>${pokemonName}</li>`)
             $('a').css('text-decoration', 'none')
         })
     }
